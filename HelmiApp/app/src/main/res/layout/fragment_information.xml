@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.helmet.fragments.InformationFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/bac">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_marginTop="55dp">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="1dp"
+                android:background="@color/blue"/>
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:src="@drawable/driver_head_photo"
+                android:id="@+id/driver_head_photo"/>
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="1dp"
+                android:background="@color/blue"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="username" />
+            <TextView
+                android:id="@+id/tv_manager_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="wajjwa"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_marginLeft="42dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/idcard"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/tv_manager_name"
+                android:layout_gravity="center"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="40dp"
+                android:text="哈哈"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginLeft="42dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/gender"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/tv_manager_gender"
+                android:layout_gravity="center"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="40dp"
+                android:text="女"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginLeft="42dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/phone"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/tv_manager_phone"
+                android:layout_gravity="center"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="40dp"
+                android:text=" 11"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginLeft="42dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/email"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/tv_manager_email"
+                android:layout_gravity="center"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="40dp"
+                android:text="wenhua_song@163.com"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginLeft="42dp"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/password"/>
+            <EditText
+                android:layout_gravity="center_horizontal"
+                android:layout_width="500px"
+                android:layout_height="60dp"
+                android:layout_marginLeft="40dp"
+                android:inputType="text"
+                android:background="@drawable/turn_in_line_repwd"
+                android:id="@+id/edit_password"
+                android:cursorVisible="true"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="联系我们：wenhua_song@163.com"/>
+        </LinearLayout>
+        <Button
+            android:layout_marginTop="50dp"
+            android:id="@+id/btn_update"
+            android:layout_width="500px"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/shape"
+            android:text="确认修改" />
+    </LinearLayout>
+</FrameLayout>
