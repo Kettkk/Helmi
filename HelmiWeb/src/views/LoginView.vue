@@ -18,6 +18,8 @@ import LoginFormComponent from "@/components/LoginFormComponent.vue";
         帮助中心 | 2024 ©TZC | 京ICP备2024000001号
       </div>
 
+<!--      <img src="http://helmi.asia/video" style="width: 500px; height: auto;margin-top: 40px;margin-left: 30px">-->
+
 
     </el-aside>
 

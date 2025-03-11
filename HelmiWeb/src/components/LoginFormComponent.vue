@@ -33,6 +33,7 @@ const handleLogin = async () => {
   });
   if (res.data === "success") {
     console.log('登录成功');
+    go2AdminView();
   } else {
     console.log('登录失败');
     console.log(res.data);
@@ -44,6 +45,12 @@ const handleLogin = async () => {
 const go2SignUp = () => {
   console.log('go2SignUp');
   router.push({name: 'signupView'})
+}
+
+//go2adminView
+const go2AdminView = () => {
+  console.log('go2AdminView');
+  router.push({name: 'adminView'})
 }
 </script>
 
