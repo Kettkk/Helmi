@@ -26,7 +26,6 @@ const formRules = reactive({
 const formRef = ref<FormInstance>();
 
 const handleLogin = async () => {
-   //发送表单到localhost:8000/admin/login，返回的data中若为1则登录成功，否则登录失败
   const res = await axios.post('http://localhost:8000/admin/login', {
     username: formLabelAlign.username,
     password: formLabelAlign.password

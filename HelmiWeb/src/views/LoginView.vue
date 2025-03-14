@@ -6,7 +6,6 @@ import LoginFormComponent from "@/components/LoginFormComponent.vue";
 <div id="viewContainer">
   <el-container>
     <el-aside width="900px">
-
       <div id="mainTitleContainer">
         智安行
       </div>
@@ -17,10 +16,7 @@ import LoginFormComponent from "@/components/LoginFormComponent.vue";
       <div id="bottomTitle">
         帮助中心 | 2024 ©TZC | 京ICP备2024000001号
       </div>
-
 <!--      <img src="http://helmi.asia/video" style="width: 500px; height: auto;margin-top: 40px;margin-left: 30px">-->
-
-
     </el-aside>
 
     <el-main id="mainContainer">

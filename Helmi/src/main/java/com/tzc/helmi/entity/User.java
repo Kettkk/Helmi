@@ -2,6 +2,7 @@ package com.tzc.helmi.entity;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import lombok.Data;
+import lombok.Getter;
 
 import java.time.LocalDateTime;
 

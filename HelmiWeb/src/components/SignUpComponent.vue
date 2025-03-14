@@ -35,7 +35,7 @@ const SignUpMsg = () => {
 
 const go2Login = () => {
   console.log('go2Login');
-  router.push('/');
+  router.push({ name: 'loginView' });
 };
 
 const submit = () => {
