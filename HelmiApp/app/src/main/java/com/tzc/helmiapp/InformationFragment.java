@@ -1,7 +1,12 @@
 package com.tzc.helmiapp;
 
+import static androidx.constraintlayout.motion.widget.Debug.getLocation;
+
+import android.content.pm.PackageManager;
+import android.location.LocationManager;
 import android.os.Bundle;
 
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 
 import android.os.Handler;
@@ -19,19 +24,24 @@ import java.sql.SQLException;
 
 
 public class InformationFragment extends Fragment {
-
-    private TextView textViewBodyTemperature;
-    private TextView textViewHeartRate;
-    private TextView textViewBloodPressure;
+    private TextView textViewIsWear;
+    private TextView textViewTemperature;
     private TextView textViewEnvironmentTemperature;
-    private TextView textViewSpeed;
+    private TextView textViewEnvironmentHumidity;
+    private TextView textViewHeartRate;
+    private TextView textViewLongitude;
+    private TextView textViewLatitude;
+    private TextView textViewHighPressure;
+    private TextView textViewLowPressure;
     private TextView textViewFallStress;
+    private TextView textViewSpeed;
     private String username;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        // 获取设备数据
         Bundle bundle = this.getArguments();
         if (bundle != null) {
             username = bundle.getString("username"); // 从Bundle中获取数据
@@ -49,22 +59,39 @@ public class InformationFragment extends Fragment {
                     ResultSet resultSet = preparedStatement.executeQuery();
 
                     if (resultSet.next()) {
-                        float bodyTemperature = resultSet.getFloat("temperature");
-                        float heartRate = resultSet.getFloat("heart_rate");
-                        float bloodPressure = resultSet.getFloat("body_pressure");
+                        int isWear = resultSet.getInt("is_wear");
+                        float temperature = resultSet.getFloat("temperature");
                         float environmentTemperature = resultSet.getFloat("env_temperature");
-                        float speed = resultSet.getFloat("speed");
+                        float environmentHumidity = resultSet.getFloat("env_humidity");
+                        float heartRate = resultSet.getFloat("heart_rate");
+                        float longitude = resultSet.getFloat("longitude");
+                        float latitude = resultSet.getFloat("latitude");
+                        float highPressure = resultSet.getFloat("high_pressure");
+                        float lowPressure = resultSet.getFloat("low_pressure");
                         float fallStress = resultSet.getFloat("body_pressure");
+                        float speed = resultSet.getFloat("speed");
+
 
                         new Handler(Looper.getMainLooper()).post(new Runnable() {
                             @Override
                             public void run() {
-                                textViewBodyTemperature.setText(bodyTemperature + "°C");
-                                textViewHeartRate.setText(heartRate + "次/分");
-                                textViewBloodPressure.setText(bloodPressure + "mmHg");
+                                if (isWear == 0) {
+                                    textViewIsWear.setText("否");
+                                } else {
+                                    textViewIsWear.setText("是");
+                                }
+
+                                textViewTemperature.setText(temperature + "°C");
                                 textViewEnvironmentTemperature.setText(environmentTemperature + "°C");
-                                textViewSpeed.setText(speed + "m/s");
+                                textViewEnvironmentHumidity.setText(environmentHumidity + "%");
+                                textViewHeartRate.setText(heartRate + "bpm");
+                                textViewLongitude.setText(longitude + "°");
+                                textViewLatitude.setText(latitude + "°");
+                                textViewHighPressure.setText(highPressure + "mmHg");
+                                textViewLowPressure.setText(lowPressure + "mmHg");
                                 textViewFallStress.setText(fallStress + "Pa");
+                                textViewSpeed.setText(speed + "m/s");
+
                             }
                         });
                     }
@@ -81,12 +108,20 @@ public class InformationFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_information, container, false);
-        textViewBodyTemperature = view.findViewById(R.id.body_temperature_value);
-        textViewHeartRate = view.findViewById(R.id.heart_rate_value);
-        textViewBloodPressure = view.findViewById(R.id.blood_pressure_value);
+        textViewIsWear = view.findViewById(R.id.is_wear_value);
+        textViewTemperature = view.findViewById(R.id.temperature_value);
         textViewEnvironmentTemperature = view.findViewById(R.id.environment_temperature_value);
-        textViewSpeed = view.findViewById(R.id.speed_value);
+        textViewEnvironmentHumidity = view.findViewById(R.id.environment_humidity_value);
+        textViewHeartRate = view.findViewById(R.id.heart_rate_value);
+        textViewLongitude = view.findViewById(R.id.longitude_value);
+        textViewLatitude = view.findViewById(R.id.latitude_value);
+        textViewHighPressure = view.findViewById(R.id.high_pressure_value);
+        textViewLowPressure = view.findViewById(R.id.low_pressure_value);
         textViewFallStress = view.findViewById(R.id.fall_stress_value);
+        textViewSpeed = view.findViewById(R.id.speed_value);
+
+
         return view;
     }
+
 }

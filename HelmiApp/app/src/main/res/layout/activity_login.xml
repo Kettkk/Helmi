@@ -1,38 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
 
-    <TextView
-        android:id="@+id/txt_login_title"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="智安行" />
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="80dp"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imageView13"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_marginRight="20dp"
+            app:srcCompat="@drawable/icon_helmet" />
+
+        <TextView
+            android:id="@+id/txt_login_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="智安行"
+            android:textAlignment="center"
+            android:textColor="#409EFF"
+            android:textSize="40sp" />
+    </LinearLayout>
 
     <EditText
         android:id="@+id/edt_login_username"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="text"
         android:hint="请输入用户名"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="10dp"
         android:text="" />
 
     <EditText
         android:id="@+id/edt_login_password"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="请输入密码"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="30dp"
         android:inputType="textPassword" />
 
     <Button
         android:id="@+id/btn_login"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="220dp"
+        android:layout_height="35dp"
         android:onClick="login"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="50dp"
+        android:background="#409EFF"
+        android:textColor="@color/white"
         android:text="登录" />
 
     <LinearLayout
@@ -40,12 +68,12 @@
         android:layout_height="match_parent"
         android:orientation="horizontal">
 
-
         <TextView
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:textAlignment="center"
             android:text="忘记密码" />
 
         <TextView
@@ -54,6 +82,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="goToRegisterView"
+            android:textAlignment="center"
             android:text="注册" />
     </LinearLayout>
 

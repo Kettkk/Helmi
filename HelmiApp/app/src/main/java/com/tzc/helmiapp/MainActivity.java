@@ -69,7 +69,4 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.commit();
     }
 
-    public void updateInformation(View view) {
-
-    }
 }
