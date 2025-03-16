@@ -29,6 +29,7 @@ android {
 }
 
 dependencies {
+    implementation files('libs/AMap3DMap_10.1.200_AMapNavi_10.1.200_AMapSearch_9.7.4_AMapLocation_6.4.9_20241226.jar')
 
     implementation libs.appcompat
     implementation libs.material

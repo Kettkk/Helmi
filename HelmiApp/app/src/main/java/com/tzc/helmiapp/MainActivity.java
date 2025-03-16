@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         IdentificationFragment identificationFragment = new IdentificationFragment();
 
         informationFragment.setArguments(bundle);
+        settingsFragment.setArguments(bundle);
 
         int id = view.getId();
 

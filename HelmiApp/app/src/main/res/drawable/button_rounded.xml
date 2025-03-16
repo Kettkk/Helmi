@@ -1,0 +1,7 @@
+<!-- res/drawable/button_rounded.xml -->
+<!-- 前往导航的按钮圆角样式 -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="#007AFF" />
+    <corners android:radius="50dp" />
+</shape>

@@ -1,0 +1,31 @@
+<!-- 导航搜索界面 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#FFFFFF">
+
+    <EditText
+        android:id="@+id/et_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="搜索目的地"
+        android:padding="12dp"
+        android:background="@android:color/white"
+        android:textColorHint="#808080"
+        android:textSize="16sp"
+        android:drawableLeft="@android:drawable/ic_search_category_default"
+        android:drawablePadding="8dp"
+        android:elevation="4dp"
+        android:layout_marginBottom="16dp"/>
+
+    <ListView
+        android:id="@+id/lv_search_results"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="1dp"/>
+
+</LinearLayout>
