@@ -1,20 +1,19 @@
-<script setup>
-import { ref } from 'vue'
+<script setup lang="ts">
+import SideBarComponent from '@/components/SideBarComponent.vue';
 
-const value1 = ref(true)
-const value2 = ref(true)
 </script>
 
 <template>
-
-  <el-switch
-    v-model="value2"
-    class="ml-2"
-    style="--el-switch-on-color: #13ce66; --el-switch-off-color: #ff4949"
-  />
+  <div class="common-layout">
+    <el-container>
+      <el-aside width="200px">
+        <SideBarComponent></SideBarComponent>
+      </el-aside>
+      <el-main>
+        <router-view></router-view>
+      </el-main>
+    </el-container>
+  </div>
 </template>
 
-<style scoped>
-
-
-</style>
+<style scoped></style>
