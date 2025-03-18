@@ -39,6 +39,7 @@
     </el-table>
 
     <el-dialog v-model="dialogVideoVisible" title="环境识别" width="800">
+      <env-video-component :visible="dialogVideoVisible"></env-video-component>
     </el-dialog>
   </div>
 </template>
@@ -46,7 +47,8 @@
 <script setup>
 import { Search } from '@element-plus/icons-vue'
 import { ref, onMounted } from 'vue'; // 引入 ref 和 onMounted
-import axios from 'axios'; // 引入 axios
+import axios from 'axios';
+import EnvVideoComponent from "@/components/EnvVideoComponent.vue"; // 引入 axios
 
 
 const tableData = ref([]);
