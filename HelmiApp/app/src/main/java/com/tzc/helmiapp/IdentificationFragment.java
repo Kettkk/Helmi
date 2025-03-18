@@ -1,64 +1,109 @@
 package com.tzc.helmiapp;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import android.widget.Toast;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import org.java_websocket.client.WebSocketClient;
+import org.java_websocket.handshake.ServerHandshake;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.ArrayList;
+import java.util.List;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link IdentificationFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class IdentificationFragment extends Fragment {
+    private static final String STREAM_URL = "http://172.20.10.3:81/stream";
+    private static final String WS_URL = "ws://helmi.asia/ws/detection";
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private WebView webView;
+    private RecyclerView recyclerView;
+    private DetectionAdapter detectionAdapter;
+    private WebSocketClient webSocketClient;
+    private List<String> detectedItems = new ArrayList<>();
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public IdentificationFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment IdentificationFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static IdentificationFragment newInstance(String param1, String param2) {
-        IdentificationFragment fragment = new IdentificationFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.fragment_identification, container, false);
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        webView = view.findViewById(R.id.webView);
+        recyclerView = view.findViewById(R.id.recyclerView);
+
+        setupWebView();
+        setupRecyclerView();
+        setupWebSocket();
+    }
+
+    private void setupWebView() {
+        webView.setWebViewClient(new WebViewClient());
+        WebSettings webSettings = webView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+        webView.loadUrl(STREAM_URL);
+    }
+
+    private void setupRecyclerView() {
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        detectionAdapter = new DetectionAdapter(detectedItems);
+        recyclerView.setAdapter(detectionAdapter);
+    }
+
+    private void setupWebSocket() {
+        try {
+            webSocketClient = new WebSocketClient(new URI(WS_URL)) {
+                @Override
+                public void onOpen(ServerHandshake handshakedata) {
+                    getActivity().runOnUiThread(() ->
+                            Toast.makeText(getContext(), "WebSocket 已连接", Toast.LENGTH_SHORT).show()
+                    );
+                }
+
+                @Override
+                public void onMessage(String message) {
+                    getActivity().runOnUiThread(() -> {
+                        detectedItems.clear();
+                        detectedItems.add(message);
+                        detectionAdapter.notifyDataSetChanged();
+                    });
+                }
+
+                @Override
+                public void onClose(int code, String reason, boolean remote) {
+                    getActivity().runOnUiThread(() ->
+                            Toast.makeText(getContext(), "WebSocket 断开: " + reason, Toast.LENGTH_SHORT).show()
+                    );
+                }
+
+                @Override
+                public void onError(Exception ex) {
+                    getActivity().runOnUiThread(() ->
+                            Toast.makeText(getContext(), "WebSocket 错误: " + ex.getMessage(), Toast.LENGTH_SHORT).show()
+                    );
+                }
+            };
+            webSocketClient.connect();
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
         }
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_identification, container, false);
+    public void onDestroyView() {
+        super.onDestroyView();
+        if (webSocketClient != null) {
+            webSocketClient.close();
+        }
     }
 }

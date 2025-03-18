@@ -5,6 +5,7 @@
 
     <!-- 允许访问网络，必选权限 -->
     <uses-permission android:name="android.permission.INTERNET" /> <!-- 允许获取粗略位置，若用GPS实现定位小蓝点功能则必选 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <!-- 前台定位权限 -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- 后台定位权限（如果需要） -->
@@ -29,6 +30,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
         android:theme="@style/Theme.HelmiApp"
         tools:targetApi="31">
         <activity
