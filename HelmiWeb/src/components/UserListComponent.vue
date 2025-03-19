@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="user-list">
     <div style="margin-bottom: 15px;">
       <el-input style="width: 240px" placeholder="搜索" :suffix-icon="Search" />
     </div>
@@ -68,5 +68,8 @@ onMounted(() => {
 });
 
 </script>
-
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.user-list {
+  padding: 20px;
+}
+</style>

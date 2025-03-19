@@ -16,4 +16,8 @@ import SideBarComponent from '@/components/SideBarComponent.vue';
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.el-main {
+  padding: 0;
+}
+</style>
