@@ -46,27 +46,31 @@
 
 <script setup>
 import { Search } from '@element-plus/icons-vue'
-import { ref, onMounted } from 'vue'; // 引入 ref 和 onMounted
 import axios from 'axios';
 import EnvVideoComponent from "@/components/EnvVideoComponent.vue"; // 引入 axios
 
+import { ref, onMounted, onUnmounted } from 'vue';
 
 const tableData = ref([]);
-const dialogVideoVisible = ref(false)
-// 请求数据的方法
+const dialogVideoVisible = ref(false);
+let intervalId = null; // 存储定时器 ID
+
 const fetchData = async () => {
   try {
-    const response = await axios.get('http://localhost:8000/statu/getAllStatu'); // 发送 GET 请求
-    tableData.value = response.data; // 将返回的数据赋值给 tableData
-    console.log(response.data)
+    const response = await axios.get('http://localhost:8000/statu/getAllStatu');
+    tableData.value = response.data;
   } catch (error) {
     console.error('请求数据失败:', error);
   }
 };
 
-// 在组件挂载时调用 fetchData
 onMounted(() => {
   fetchData();
+  intervalId = setInterval(fetchData, 6500); // 每 6.5 秒更新数据
+});
+
+onUnmounted(() => {
+  clearInterval(intervalId); // 组件销毁时清除定时器
 });
 
 </script>
