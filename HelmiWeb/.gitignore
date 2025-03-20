@@ -6,7 +6,9 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
-
+.DS_Store
+**/.DS_Store
+.DS_Store?
 node_modules
 .DS_Store
 dist
@@ -28,3 +30,4 @@ coverage
 *.sw?
 
 *.tsbuildinfo
+.DS_Store
