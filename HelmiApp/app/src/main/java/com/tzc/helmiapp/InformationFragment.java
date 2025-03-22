@@ -1,27 +1,17 @@
 package com.tzc.helmiapp;
 
-import static androidx.constraintlayout.motion.widget.Debug.getLocation;
-
-import android.content.pm.PackageManager;
-import android.location.LocationManager;
 import android.os.Bundle;
-
-import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
-
 import android.os.Handler;
 import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
 
 public class InformationFragment extends Fragment {
     private TextView textViewIsWear;
@@ -36,6 +26,9 @@ public class InformationFragment extends Fragment {
     private TextView textViewFallStress;
     private TextView textViewSpeed;
     private String username;
+    private Handler handler;
+    private Runnable updateRunnable;
+    private static final long UPDATE_INTERVAL = 6500; // 6.5 秒
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -47,61 +40,66 @@ public class InformationFragment extends Fragment {
             username = bundle.getString("username"); // 从Bundle中获取数据
         }
 
-        new Thread(new Runnable() {
+        handler = new Handler(Looper.getMainLooper());
+        updateRunnable = new Runnable() {
             @Override
             public void run() {
-                Connection connection = DBUtil.getConnection();
-                String sql = "SELECT * FROM device_statu WHERE username = ?";
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Connection connection = DBUtil.getConnection();
+                        String sql = "SELECT * FROM device_statu WHERE username = ?";
 
-                try {
-                    PreparedStatement preparedStatement = connection.prepareStatement(sql);
-                    preparedStatement.setString(1, username);
-                    ResultSet resultSet = preparedStatement.executeQuery();
+                        try {
+                            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+                            preparedStatement.setString(1, username);
+                            ResultSet resultSet = preparedStatement.executeQuery();
 
-                    if (resultSet.next()) {
-                        int isWear = resultSet.getInt("is_wear");
-                        float temperature = resultSet.getFloat("temperature");
-                        float environmentTemperature = resultSet.getFloat("env_temperature");
-                        float environmentHumidity = resultSet.getFloat("env_humidity");
-                        float heartRate = resultSet.getFloat("heart_rate");
-                        float longitude = resultSet.getFloat("longitude");
-                        float latitude = resultSet.getFloat("latitude");
-                        float highPressure = resultSet.getFloat("high_pressure");
-                        float lowPressure = resultSet.getFloat("low_pressure");
-                        float fallStress = resultSet.getFloat("body_pressure");
-                        float speed = resultSet.getFloat("speed");
+                            if (resultSet.next()) {
+                                int isWear = resultSet.getInt("is_wear");
+                                float temperature = resultSet.getFloat("temperature");
+                                float environmentTemperature = resultSet.getFloat("env_temperature");
+                                float environmentHumidity = resultSet.getFloat("env_humidity");
+                                float heartRate = resultSet.getFloat("heart_rate");
+                                float longitude = resultSet.getFloat("longitude");
+                                float latitude = resultSet.getFloat("latitude");
+                                float highPressure = resultSet.getFloat("high_pressure");
+                                float lowPressure = resultSet.getFloat("low_pressure");
+                                float fallStress = resultSet.getFloat("body_pressure");
+                                float speed = resultSet.getFloat("speed");
 
+                                new Handler(Looper.getMainLooper()).post(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        if (isWear == 0) {
+                                            textViewIsWear.setText("否");
+                                        } else {
+                                            textViewIsWear.setText("是");
+                                        }
 
-                        new Handler(Looper.getMainLooper()).post(new Runnable() {
-                            @Override
-                            public void run() {
-                                if (isWear == 0) {
-                                    textViewIsWear.setText("否");
-                                } else {
-                                    textViewIsWear.setText("是");
-                                }
-
-                                textViewTemperature.setText(temperature + "°C");
-                                textViewEnvironmentTemperature.setText(environmentTemperature + "°C");
-                                textViewEnvironmentHumidity.setText(environmentHumidity + "%");
-                                textViewHeartRate.setText(heartRate + "bpm");
-                                textViewLongitude.setText(longitude + "°");
-                                textViewLatitude.setText(latitude + "°");
-                                textViewHighPressure.setText(highPressure + "mmHg");
-                                textViewLowPressure.setText(lowPressure + "mmHg");
-                                textViewFallStress.setText(fallStress + "Pa");
-                                textViewSpeed.setText(speed + "m/s");
-
+                                        textViewTemperature.setText(temperature + "°C");
+                                        textViewEnvironmentTemperature.setText(environmentTemperature + "°C");
+                                        textViewEnvironmentHumidity.setText(environmentHumidity + "%");
+                                        textViewHeartRate.setText(heartRate + "bpm");
+                                        textViewLongitude.setText(longitude + "°");
+                                        textViewLatitude.setText(latitude + "°");
+                                        textViewHighPressure.setText(highPressure + "mmHg");
+                                        textViewLowPressure.setText(lowPressure + "mmHg");
+                                        textViewFallStress.setText(fallStress + "Pa");
+                                        textViewSpeed.setText(speed + "m/s");
+                                    }
+                                });
                             }
-                        });
+
+                        } catch (SQLException e) {
+                            throw new RuntimeException(e);
+                        } finally {
+                            handler.postDelayed(updateRunnable, UPDATE_INTERVAL);
+                        }
                     }
-
-                } catch (SQLException e) {
-                    throw new RuntimeException(e);
-                }
-
+                }).start();
             }
-        }).start();
+        };
     }
 
     @Override
@@ -120,8 +118,16 @@ public class InformationFragment extends Fragment {
         textViewFallStress = view.findViewById(R.id.fall_stress_value);
         textViewSpeed = view.findViewById(R.id.speed_value);
 
+        // 开始第一次更新
+        handler.postDelayed(updateRunnable, 0);
 
         return view;
     }
 
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        // 停止定时任务
+        handler.removeCallbacks(updateRunnable);
+    }
 }

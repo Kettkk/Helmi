@@ -4,7 +4,7 @@ plugins {
 
 android {
     namespace 'com.tzc.helmiapp'
-    compileSdk 34
+    compileSdkVersion 34
 
     defaultConfig {
         applicationId "com.tzc.helmiapp"
