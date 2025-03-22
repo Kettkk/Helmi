@@ -19,7 +19,7 @@ export default defineConfig({
     port: 5173, // Vite 默认端口
     proxy: {
       '/admin': { // 代理后端 API 请求
-        target: 'http://localhost:8000', // 后端地址
+        target: 'http://124.71.159.132:8000', // 后端地址
         changeOrigin: true, // 允许跨域
         rewrite: (path) => path.replace(/^\/admin/, '/admin'), // 重写路径
       },
