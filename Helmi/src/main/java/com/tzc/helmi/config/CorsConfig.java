@@ -28,17 +28,4 @@ public class CorsConfig {
     }
 
 
-    @Bean
-    public CorsFilter corsFilter() {
-        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        CorsConfiguration config = new CorsConfiguration();
-        config.setAllowCredentials(true);
-        config.setAllowedOrigins(Collections.singletonList("https://helmiweb.asia")); // 允许前端访问
-        config.addAllowedHeader("*");
-        config.addAllowedMethod("*"); // 允许所有请求方式
-        source.registerCorsConfiguration("/**", config);
-        return new CorsFilter(source);
-    }
-
-
 }
