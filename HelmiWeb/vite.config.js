@@ -17,7 +17,6 @@ export default defineConfig({
   server: {
     host: true, // 允许外部访问
     port: 5173, // Vite 默认端口
-    allowedHosts: ['helmiweb.asia'],
     proxy: {
       '/admin': { // 代理后端 API 请求
         target: 'http://localhost:8000', // 后端地址
