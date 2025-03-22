@@ -77,13 +77,12 @@ const go2AdminView = () => {
       </el-form-item>
     </el-form>
 
-    <div id="txtBtn" @click="go2SignUp">还没有账号？立即注册</div>
   </div>
 </template>
 
 <style scoped>
 #formContainer {
-  height: 500px;
+  height: 400px;
   width: 450px;
   background-color: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
