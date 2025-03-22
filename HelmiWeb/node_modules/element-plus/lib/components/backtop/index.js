@@ -2,8 +2,8 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var backtop$1 = require('./src/backtop.js');
-var backtop = require('./src/backtop2.js');
+var backtop$1 = require('./src/backtop2.js');
+var backtop = require('./src/backtop.js');
 var install = require('../../utils/vue/install.js');
 
 const ElBacktop = install.withInstall(backtop$1["default"]);

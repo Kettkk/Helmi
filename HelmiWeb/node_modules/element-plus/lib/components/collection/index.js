@@ -2,7 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var collection = require('./src/collection2.js');
+var collection = require('./src/collection.js');
 
 
 

@@ -30,4 +30,4 @@ export declare function useGlobalComponentSettings(block: string, sizeFallback?:
     };
     size: import("vue").ComputedRef<"small" | "" | "default" | "large">;
 };
-export declare const provideGlobalConfig: (config: MaybeRef<ConfigProviderContext>, app?: App, global?: boolean) => import("vue").ComputedRef<Partial<import("element-plus/es/element-plus").ConfigProviderProps>> | undefined;
+export declare const provideGlobalConfig: (config: MaybeRef<ConfigProviderContext>, app?: App, global?: boolean) => import("vue").ComputedRef<Partial<import("element-plus").ConfigProviderProps>> | undefined;

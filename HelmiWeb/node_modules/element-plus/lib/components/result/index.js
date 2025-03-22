@@ -2,8 +2,8 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var result$1 = require('./src/result2.js');
-var result = require('./src/result.js');
+var result$1 = require('./src/result.js');
+var result = require('./src/result2.js');
 var install = require('../../utils/vue/install.js');
 
 const ElResult = install.withInstall(result$1["default"]);

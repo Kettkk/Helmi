@@ -3,7 +3,7 @@ import { useEventListener } from '@vueuse/core';
 import { ElInputNumber } from '../../input-number/index.mjs';
 import { sliderContextKey } from './constants.mjs';
 import { sliderProps, sliderEmits } from './slider.mjs';
-import SliderButton from './button2.mjs';
+import SliderButton from './button.mjs';
 import SliderMarker from './marker.mjs';
 import _export_sfc from '../../../_virtual/plugin-vue_export-helper.mjs';
 import { useSlide } from './composables/use-slide.mjs';

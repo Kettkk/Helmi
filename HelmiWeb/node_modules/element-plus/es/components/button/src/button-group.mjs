@@ -1,4 +1,4 @@
-import { buttonProps } from './button.mjs';
+import { buttonProps } from './button2.mjs';
 
 const buttonGroupProps = {
   size: buttonProps.size,

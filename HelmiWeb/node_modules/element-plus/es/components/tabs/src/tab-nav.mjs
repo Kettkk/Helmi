@@ -2,7 +2,7 @@ import { defineComponent, inject, ref, computed, watch, onMounted, onUpdated, cr
 import { useDocumentVisibility, useWindowFocus, useResizeObserver } from '@vueuse/core';
 import { ElIcon } from '../../icon/index.mjs';
 import { ArrowLeft, ArrowRight, Close } from '@element-plus/icons-vue';
-import TabBar from './tab-bar2.mjs';
+import TabBar from './tab-bar.mjs';
 import { tabsRootContextKey } from './constants.mjs';
 import { buildProps, definePropType } from '../../../utils/vue/props/runtime.mjs';
 import { mutable } from '../../../utils/typescript.mjs';

@@ -2,7 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var content = require('./content2.js');
+var content = require('./content.js');
 var trigger = require('./trigger.js');
 var popper = require('../../popper/src/popper.js');
 var arrow = require('../../popper/src/arrow.js');

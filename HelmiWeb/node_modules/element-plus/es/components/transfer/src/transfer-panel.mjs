@@ -1,4 +1,4 @@
-import { transferProps, transferCheckedChangeFn } from './transfer2.mjs';
+import { transferProps, transferCheckedChangeFn } from './transfer.mjs';
 import { buildProps, definePropType } from '../../../utils/vue/props/runtime.mjs';
 
 const CHECKED_CHANGE_EVENT = "checked-change";

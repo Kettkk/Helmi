@@ -2,9 +2,9 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var button$1 = require('./src/button2.js');
+var button$1 = require('./src/button.js');
 var buttonGroup = require('./src/button-group2.js');
-var button = require('./src/button.js');
+var button = require('./src/button2.js');
 var constants = require('./src/constants.js');
 var install = require('../../utils/vue/install.js');
 

@@ -3,9 +3,9 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 var breadcrumb$1 = require('./src/breadcrumb2.js');
-var breadcrumbItem$1 = require('./src/breadcrumb-item2.js');
+var breadcrumbItem$1 = require('./src/breadcrumb-item.js');
 var breadcrumb = require('./src/breadcrumb.js');
-var breadcrumbItem = require('./src/breadcrumb-item.js');
+var breadcrumbItem = require('./src/breadcrumb-item2.js');
 var constants = require('./src/constants.js');
 var install = require('../../utils/vue/install.js');
 

@@ -20,7 +20,6 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
-    "@rollup/rollup-win32-x64-msvc": "^4.36.0",
     "@vitejs/plugin-vue": "^5.2.1",
     "@vitest/eslint-plugin": "^1.1.36",
     "@vue/test-utils": "^2.4.6",

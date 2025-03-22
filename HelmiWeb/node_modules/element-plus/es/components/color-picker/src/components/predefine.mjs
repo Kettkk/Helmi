@@ -1,5 +1,5 @@
 import { defineComponent, inject, ref, watch, watchEffect, openBlock, createElementBlock, normalizeClass, createElementVNode, Fragment, renderList, normalizeStyle } from 'vue';
-import { colorPickerContextKey } from '../color-picker2.mjs';
+import { colorPickerContextKey } from '../color-picker.mjs';
 import Color from '../utils/color.mjs';
 import _export_sfc from '../../../../_virtual/plugin-vue_export-helper.mjs';
 import { useNamespace } from '../../../../hooks/use-namespace/index.mjs';

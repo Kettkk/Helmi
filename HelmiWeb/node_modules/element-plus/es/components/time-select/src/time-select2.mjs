@@ -6,6 +6,7 @@ import { ElIcon } from '../../icon/index.mjs';
 import { timeSelectProps } from './time-select.mjs';
 import { parseTime, formatTime, compareTime, nextTime } from './utils.mjs';
 import _export_sfc from '../../../_virtual/plugin-vue_export-helper.mjs';
+import { CHANGE_EVENT, UPDATE_MODEL_EVENT } from '../../../constants/event.mjs';
 import { useNamespace } from '../../../hooks/use-namespace/index.mjs';
 import { useFormDisabled } from '../../form/src/hooks/use-form-common-props.mjs';
 import { useLocale } from '../../../hooks/use-locale/index.mjs';
@@ -16,7 +17,7 @@ const __default__ = defineComponent({
 const _sfc_main = /* @__PURE__ */ defineComponent({
   ...__default__,
   props: timeSelectProps,
-  emits: ["change", "blur", "focus", "clear", "update:modelValue"],
+  emits: [CHANGE_EVENT, "blur", "focus", "clear", UPDATE_MODEL_EVENT],
   setup(__props, { expose }) {
     const props = __props;
     dayjs.extend(customParseFormat);
@@ -97,8 +98,8 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
         filterable: _ctx.editable,
         "empty-values": _ctx.emptyValues,
         "value-on-clear": _ctx.valueOnClear,
-        "onUpdate:modelValue": (event) => _ctx.$emit("update:modelValue", event),
-        onChange: (event) => _ctx.$emit("change", event),
+        "onUpdate:modelValue": (event) => _ctx.$emit(unref(UPDATE_MODEL_EVENT), event),
+        onChange: (event) => _ctx.$emit(unref(CHANGE_EVENT), event),
         onBlur: (event) => _ctx.$emit("blur", event),
         onFocus: (event) => _ctx.$emit("focus", event),
         onClear: () => _ctx.$emit("clear")

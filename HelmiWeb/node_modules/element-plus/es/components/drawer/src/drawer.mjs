@@ -1,4 +1,4 @@
-import { dialogProps, dialogEmits } from '../../dialog/src/dialog2.mjs';
+import { dialogProps, dialogEmits } from '../../dialog/src/dialog.mjs';
 import { buildProps } from '../../../utils/vue/props/runtime.mjs';
 
 const drawerProps = buildProps({

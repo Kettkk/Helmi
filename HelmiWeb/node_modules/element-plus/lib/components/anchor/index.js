@@ -3,7 +3,7 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 var anchor$1 = require('./src/anchor2.js');
-var anchorLink = require('./src/anchor-link.js');
+var anchorLink = require('./src/anchor-link2.js');
 var anchor = require('./src/anchor.js');
 var install = require('../../utils/vue/install.js');
 

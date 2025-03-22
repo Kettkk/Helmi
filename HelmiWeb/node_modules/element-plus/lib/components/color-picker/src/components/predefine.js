@@ -3,7 +3,7 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 var vue = require('vue');
-var colorPicker = require('../color-picker2.js');
+var colorPicker = require('../color-picker.js');
 var color = require('../utils/color.js');
 var pluginVue_exportHelper = require('../../../../_virtual/plugin-vue_export-helper.js');
 var index = require('../../../../hooks/use-namespace/index.js');

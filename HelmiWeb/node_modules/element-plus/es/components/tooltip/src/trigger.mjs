@@ -1,4 +1,4 @@
-import { popperTriggerProps } from '../../popper/src/trigger2.mjs';
+import { popperTriggerProps } from '../../popper/src/trigger.mjs';
 import { buildProps, definePropType } from '../../../utils/vue/props/runtime.mjs';
 import { EVENT_CODE } from '../../../constants/aria.mjs';
 

@@ -2,7 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var dialog = require('../../dialog/src/dialog2.js');
+var dialog = require('../../dialog/src/dialog.js');
 var runtime = require('../../../utils/vue/props/runtime.js');
 
 const drawerProps = runtime.buildProps({

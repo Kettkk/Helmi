@@ -2,8 +2,8 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var rate$1 = require('./src/rate2.js');
-var rate = require('./src/rate.js');
+var rate$1 = require('./src/rate.js');
+var rate = require('./src/rate2.js');
 var install = require('../../utils/vue/install.js');
 
 const ElRate = install.withInstall(rate$1["default"]);

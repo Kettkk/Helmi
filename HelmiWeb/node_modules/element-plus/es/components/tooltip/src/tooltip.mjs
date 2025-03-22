@@ -1,4 +1,4 @@
-import { useTooltipContentProps } from './content2.mjs';
+import { useTooltipContentProps } from './content.mjs';
 import { useTooltipTriggerProps } from './trigger.mjs';
 import { popperProps } from '../../popper/src/popper.mjs';
 import { popperArrowProps } from '../../popper/src/arrow.mjs';

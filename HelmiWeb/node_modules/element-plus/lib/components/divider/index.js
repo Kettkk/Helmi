@@ -2,8 +2,8 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var divider$1 = require('./src/divider2.js');
-var divider = require('./src/divider.js');
+var divider$1 = require('./src/divider.js');
+var divider = require('./src/divider2.js');
 var install = require('../../utils/vue/install.js');
 
 const ElDivider = install.withInstall(divider$1["default"]);

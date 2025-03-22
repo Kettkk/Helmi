@@ -2,8 +2,8 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var transfer$1 = require('./src/transfer.js');
-var transfer = require('./src/transfer2.js');
+var transfer$1 = require('./src/transfer2.js');
+var transfer = require('./src/transfer.js');
 var install = require('../../utils/vue/install.js');
 
 const ElTransfer = install.withInstall(transfer$1["default"]);

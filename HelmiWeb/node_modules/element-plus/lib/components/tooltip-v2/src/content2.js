@@ -4,7 +4,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 var vue = require('vue');
 var dom = require('@floating-ui/dom');
-var visualHidden = require('../../visual-hidden/src/visual-hidden.js');
+var visualHidden = require('../../visual-hidden/src/visual-hidden2.js');
 var constants = require('./constants.js');
 var content = require('./content.js');
 var common = require('./common.js');

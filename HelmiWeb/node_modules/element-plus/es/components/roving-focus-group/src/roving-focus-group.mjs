@@ -1,4 +1,4 @@
-import { createCollectionWithScope } from '../../collection/src/collection2.mjs';
+import { createCollectionWithScope } from '../../collection/src/collection.mjs';
 import { buildProps, definePropType } from '../../../utils/vue/props/runtime.mjs';
 
 const rovingFocusGroupProps = buildProps({

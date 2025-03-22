@@ -20,7 +20,7 @@ declare const __VLS_component: import("vue").DefineComponent<{
     readonly validateEvent: import("element-plus/es/utils").EpPropFinalized<BooleanConstructor, unknown, unknown, true, boolean>;
 }, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
     "update:modelValue": (val: CheckboxGroupValueType) => void;
-    change: (val: import("element-plus/es/element-plus").CheckboxValueType[]) => void;
+    change: (val: import("element-plus").CheckboxValueType[]) => void;
 }, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     readonly ariaLabel: StringConstructor;
     readonly modelValue: import("element-plus/es/utils").EpPropFinalized<(new (...args: any[]) => CheckboxGroupValueType) | (() => CheckboxGroupValueType) | ((new (...args: any[]) => CheckboxGroupValueType) | (() => CheckboxGroupValueType))[], unknown, unknown, () => never[], boolean>;
@@ -39,7 +39,7 @@ declare const __VLS_component: import("vue").DefineComponent<{
     readonly validateEvent: import("element-plus/es/utils").EpPropFinalized<BooleanConstructor, unknown, unknown, true, boolean>;
 }>> & {
     "onUpdate:modelValue"?: ((val: CheckboxGroupValueType) => any) | undefined;
-    onChange?: ((val: import("element-plus/es/element-plus").CheckboxValueType[]) => any) | undefined;
+    onChange?: ((val: import("element-plus").CheckboxValueType[]) => any) | undefined;
 }, {
     readonly disabled: boolean;
     readonly modelValue: CheckboxGroupValueType;

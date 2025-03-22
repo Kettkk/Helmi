@@ -2,10 +2,10 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var dropdown = require('../../dropdown/src/dropdown.js');
+var dropdown = require('../../dropdown/src/dropdown2.js');
 var runtime = require('../../../utils/vue/props/runtime.js');
 var trigger = require('../../tooltip/src/trigger.js');
-var content = require('../../tooltip/src/content2.js');
+var content = require('../../tooltip/src/content.js');
 var types = require('../../../utils/types.js');
 
 const popoverProps = runtime.buildProps({

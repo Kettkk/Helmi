@@ -2,8 +2,8 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var tag$1 = require('./src/tag.js');
-var tag = require('./src/tag2.js');
+var tag$1 = require('./src/tag2.js');
+var tag = require('./src/tag.js');
 var install = require('../../utils/vue/install.js');
 
 const ElTag = install.withInstall(tag$1["default"]);

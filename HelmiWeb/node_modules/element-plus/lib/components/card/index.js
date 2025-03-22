@@ -2,8 +2,8 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var card$1 = require('./src/card2.js');
-var card = require('./src/card.js');
+var card$1 = require('./src/card.js');
+var card = require('./src/card2.js');
 var install = require('../../utils/vue/install.js');
 
 const ElCard = install.withInstall(card$1["default"]);

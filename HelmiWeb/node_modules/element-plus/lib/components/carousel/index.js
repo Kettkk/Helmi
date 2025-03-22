@@ -3,9 +3,9 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 var carousel$1 = require('./src/carousel2.js');
-var carouselItem$1 = require('./src/carousel-item.js');
+var carouselItem$1 = require('./src/carousel-item2.js');
 var carousel = require('./src/carousel.js');
-var carouselItem = require('./src/carousel-item2.js');
+var carouselItem = require('./src/carousel-item.js');
 var constants = require('./src/constants.js');
 var install = require('../../utils/vue/install.js');
 

@@ -1,6 +1,6 @@
-import Form from './src/form.mjs';
+import Form from './src/form2.mjs';
 import FormItem from './src/form-item2.mjs';
-export { formEmits, formMetaProps, formProps } from './src/form2.mjs';
+export { formEmits, formMetaProps, formProps } from './src/form.mjs';
 export { formItemProps, formItemValidateStates } from './src/form-item.mjs';
 export { formContextKey, formItemContextKey } from './src/constants.mjs';
 import { withInstall, withNoopInstall } from '../../utils/vue/install.mjs';

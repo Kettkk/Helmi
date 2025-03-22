@@ -2,10 +2,10 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var dropdown$1 = require('./src/dropdown2.js');
+var dropdown$1 = require('./src/dropdown.js');
 var dropdownItem = require('./src/dropdown-item.js');
 var dropdownMenu = require('./src/dropdown-menu.js');
-var dropdown = require('./src/dropdown.js');
+var dropdown = require('./src/dropdown2.js');
 var tokens = require('./src/tokens.js');
 var install = require('../../utils/vue/install.js');
 

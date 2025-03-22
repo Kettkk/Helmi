@@ -2,7 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var transfer = require('./transfer2.js');
+var transfer = require('./transfer.js');
 var runtime = require('../../../utils/vue/props/runtime.js');
 
 const CHECKED_CHANGE_EVENT = "checked-change";

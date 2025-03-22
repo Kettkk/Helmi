@@ -1,6 +1,6 @@
 import { defineComponent, inject, ref, computed, unref, watch, onMounted, provide, openBlock, createElementBlock, normalizeStyle, normalizeClass, renderSlot, createVNode, withCtx, Fragment, createTextVNode, toDisplayString, createCommentVNode } from 'vue';
 import { offset } from '@floating-ui/dom';
-import ElVisuallyHidden from '../../visual-hidden/src/visual-hidden.mjs';
+import ElVisuallyHidden from '../../visual-hidden/src/visual-hidden2.mjs';
 import { tooltipV2RootKey, tooltipV2ContentKey } from './constants.mjs';
 import { tooltipV2ContentProps } from './content.mjs';
 import { tooltipV2CommonProps } from './common.mjs';

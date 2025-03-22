@@ -36,10 +36,10 @@
           <el-row :gutter="16">
             <el-col :span="8">
               <div class="statistic-card">
-                <el-statistic :value="693700">
+                <el-statistic :value="3536">
                   <template #title>
                     <div style="display: inline-flex; align-items: center">
-                      本月营收
+                      本月营收(万元)
                       <el-tooltip
                         effect="dark"
                         content="本月至目前为止的所有收益"
@@ -56,7 +56,7 @@
                   <div class="footer-item">
                     <span>同比上个月</span>
                     <span class="red">
-                      24%
+                      27.7%
                       <el-icon>
                         <CaretTop />
                       </el-icon>
@@ -67,10 +67,10 @@
             </el-col>
             <el-col :span="8">
               <div class="statistic-card">
-                <el-statistic :value="98500">
+                <el-statistic :value="5200">
                   <template #title>
                     <div style="display: inline-flex; align-items: center">
-                      本月销售量
+                      本月销售量(台)
                       <el-tooltip
                         effect="dark"
                         content="本月至目前为止的产品销售总量"
@@ -87,7 +87,7 @@
                   <div class="footer-item">
                     <span>同比上个月</span>
                     <span class="red">
-                      12%
+                      15.6%
                       <el-icon>
                         <CaretTop />
                       </el-icon>
@@ -98,10 +98,10 @@
             </el-col>
             <el-col :span="8">
               <div class="statistic-card">
-                <el-statistic :value="102000" title="用户数量">
+                <el-statistic :value="68824" title="用户数量">
                   <template #title>
                     <div style="display: inline-flex; align-items: center">
-                      用户数量
+                      用户数量(人)
                       <el-tooltip
                         effect="dark"
                         content="产品发布至今的用户总量"
@@ -118,7 +118,7 @@
                   <div class="footer-item">
                     <span>同比去年</span>
                     <span class="red">
-                      16%
+                      21.3%
                       <el-icon>
                         <CaretTop />
                       </el-icon>
@@ -191,14 +191,14 @@ onMounted(() => {
     },
     series: [
       {
-        name: '今年每月销售量',
-        type: 'bar',
-        data: [120, 150, 180, 200, 220, 250, 230, 260, 280, 300, 320, 350] // 今年每月销售量数据
-      },
-      {
         name: '去年每月销售量',
         type: 'bar',
-        data: [80, 100, 120, 140, 160, 180, 150, 170, 190, 210, 230, 250] // 去年每月销售量数据
+        data: [1250, 1100, 1500, 1850, 2200, 2600, 3000, 3250, 2400, 2150, 1900, 1500] // 今年每月销售量数据
+      },
+      {
+        name: '今年每月销售量',
+        type: 'bar',
+        data: [1480, 1320, 1780, 2160, 2540, 3050, 3420, 3680, 2720, 2480, 2180, 1780] // 去年每月销售量数据
       }
     ],
     legend: {
@@ -220,11 +220,11 @@ onMounted(() => {
         type: 'pie',
         radius: '50%',
         data: [
-          { value: 335, name: '直接访问' },
-          { value: 310, name: '邮件营销' },
-          { value: 234, name: '联盟广告' },
-          { value: 135, name: '视频广告' },
-          { value: 1548, name: '搜索引擎' }
+          { value: 57.5, name: '产品出售' },
+          { value: 14.3, name: '平台会员' },
+          { value: 13.8, name: '技术支持' },
+          { value: 9.2, name: '广告收入' },
+          { value: 5.2, name: '品牌加盟' }
         ]
       }
     ]
@@ -232,7 +232,6 @@ onMounted(() => {
   pieChart1.setOption(pieOption1);
   window.addEventListener('resize', () => pieChart1.resize());
 
-  // 初始化第二个饼图
   const pieChart2 = echarts.init(pieChartRef2.value);
   const pieOption2 = {
     tooltip: {
@@ -243,11 +242,11 @@ onMounted(() => {
         type: 'pie',
         radius: '50%',
         data: [
-          { value: 335, name: '直接访问' },
-          { value: 310, name: '邮件营销' },
-          { value: 234, name: '联盟广告' },
-          { value: 135, name: '视频广告' },
-          { value: 1548, name: '搜索引擎' }
+          { value: 48.7, name: '制造与研发' },
+          { value: 21.3, name: '人员工资' },
+          { value: 9.8, name: '服务器运营维护' },
+          { value: 13.6, name: '市场营销和推广' },
+          { value: 6.6, name: '行政及其他费用' }
         ]
       }
     ]
@@ -271,12 +270,12 @@ onMounted(() => {
     series: [
       {
         name: '今年实际营收', // 添加名称，用于图例显示
-        data: [850, 1270, 1150, 1591, 1788, 1860, 1790, 1899, 2500, 2490, 3070, 4090],
+        data: [82.4, 74.8, 90.5, 112.3, 131.7, 158.2, 176.5, 189.4, 145.6, 132.9, 134.7, 95.3],
         type: 'line'
       },
       {
         name: '今年预计营收', // 添加名称，用于图例显示
-        data: [800, 910, 1020, 1320, 1440, 1590, 1700, 1750, 2100, 2190, 2560, 2999], // 假设的去年营收数据
+        data: [85.0, 80.2, 95.0, 110.8, 128.5, 160.0, 172.3, 185.6, 150.2, 138.0, 138.4, 100.1], // 假设的去年营收数据
         type: 'line'
       }
     ],

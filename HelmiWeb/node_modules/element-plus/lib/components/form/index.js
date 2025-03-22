@@ -2,9 +2,9 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var form$1 = require('./src/form.js');
+var form$1 = require('./src/form2.js');
 var formItem$1 = require('./src/form-item2.js');
-var form = require('./src/form2.js');
+var form = require('./src/form.js');
 var formItem = require('./src/form-item.js');
 var constants = require('./src/constants.js');
 var install = require('../../utils/vue/install.js');

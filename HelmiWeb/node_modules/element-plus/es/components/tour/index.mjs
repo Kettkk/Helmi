@@ -1,8 +1,8 @@
 import Tour from './src/tour2.mjs';
-import TourStep from './src/step.mjs';
+import TourStep from './src/step2.mjs';
 export { tourEmits, tourProps } from './src/tour.mjs';
-export { tourStepEmits, tourStepProps } from './src/step2.mjs';
-export { tourContentEmits, tourContentProps, tourPlacements, tourStrategies } from './src/content2.mjs';
+export { tourStepEmits, tourStepProps } from './src/step.mjs';
+export { tourContentEmits, tourContentProps, tourPlacements, tourStrategies } from './src/content.mjs';
 import { withInstall, withNoopInstall } from '../../utils/vue/install.mjs';
 
 const ElTour = withInstall(Tour, {

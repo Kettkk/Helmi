@@ -2,7 +2,7 @@ import { defineComponent, getCurrentInstance, ref, computed, unref, inject, reso
 import ElRovingFocusItem from '../../roving-focus-group/src/roving-focus-item.mjs';
 import ElDropdownItemImpl from './dropdown-item-impl.mjs';
 import { useDropdown } from './useDropdown.mjs';
-import { ElCollectionItem, dropdownItemProps } from './dropdown.mjs';
+import { ElCollectionItem, dropdownItemProps } from './dropdown2.mjs';
 import { DROPDOWN_INJECTION_KEY } from './tokens.mjs';
 import _export_sfc from '../../../_virtual/plugin-vue_export-helper.mjs';
 import { composeEventHandlers, whenMouse } from '../../../utils/dom/event.mjs';

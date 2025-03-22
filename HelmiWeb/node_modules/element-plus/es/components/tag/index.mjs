@@ -1,5 +1,5 @@
-import Tag from './src/tag.mjs';
-export { tagEmits, tagProps } from './src/tag2.mjs';
+import Tag from './src/tag2.mjs';
+export { tagEmits, tagProps } from './src/tag.mjs';
 import { withInstall } from '../../utils/vue/install.mjs';
 
 const ElTag = withInstall(Tag);

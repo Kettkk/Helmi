@@ -2,7 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var collection = require('../../collection/src/collection2.js');
+var collection = require('../../collection/src/collection.js');
 var runtime = require('../../../utils/vue/props/runtime.js');
 
 const rovingFocusGroupProps = runtime.buildProps({

@@ -10,6 +10,7 @@ var index$3 = require('../../icon/index.js');
 var timeSelect = require('./time-select.js');
 var utils = require('./utils.js');
 var pluginVue_exportHelper = require('../../../_virtual/plugin-vue_export-helper.js');
+var event = require('../../../constants/event.js');
 var index = require('../../../hooks/use-namespace/index.js');
 var useFormCommonProps = require('../../form/src/hooks/use-form-common-props.js');
 var index$1 = require('../../../hooks/use-locale/index.js');
@@ -25,7 +26,7 @@ const __default__ = vue.defineComponent({
 const _sfc_main = /* @__PURE__ */ vue.defineComponent({
   ...__default__,
   props: timeSelect.timeSelectProps,
-  emits: ["change", "blur", "focus", "clear", "update:modelValue"],
+  emits: [event.CHANGE_EVENT, "blur", "focus", "clear", event.UPDATE_MODEL_EVENT],
   setup(__props, { expose }) {
     const props = __props;
     dayjs__default["default"].extend(customParseFormat__default["default"]);
@@ -106,8 +107,8 @@ const _sfc_main = /* @__PURE__ */ vue.defineComponent({
         filterable: _ctx.editable,
         "empty-values": _ctx.emptyValues,
         "value-on-clear": _ctx.valueOnClear,
-        "onUpdate:modelValue": (event) => _ctx.$emit("update:modelValue", event),
-        onChange: (event) => _ctx.$emit("change", event),
+        "onUpdate:modelValue": (event$1) => _ctx.$emit(vue.unref(event.UPDATE_MODEL_EVENT), event$1),
+        onChange: (event$1) => _ctx.$emit(vue.unref(event.CHANGE_EVENT), event$1),
         onBlur: (event) => _ctx.$emit("blur", event),
         onFocus: (event) => _ctx.$emit("focus", event),
         onClear: () => _ctx.$emit("clear")

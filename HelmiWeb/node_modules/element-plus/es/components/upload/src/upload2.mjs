@@ -1,7 +1,7 @@
 import { defineComponent, shallowRef, computed, onBeforeUnmount, provide, toRef, openBlock, createElementBlock, unref, createBlock, createSlots, withCtx, createVNode, mergeProps, renderSlot, createCommentVNode } from 'vue';
 import { uploadContextKey } from './constants.mjs';
-import UploadList from './upload-list2.mjs';
-import UploadContent from './upload-content2.mjs';
+import UploadList from './upload-list.mjs';
+import UploadContent from './upload-content.mjs';
 import { useHandlers } from './use-handlers.mjs';
 import { uploadProps } from './upload.mjs';
 import _export_sfc from '../../../_virtual/plugin-vue_export-helper.mjs';
