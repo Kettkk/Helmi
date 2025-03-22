@@ -11,24 +11,17 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import org.java_websocket.client.WebSocketClient;
 import org.java_websocket.handshake.ServerHandshake;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class IdentificationFragment extends Fragment {
-    private static final String STREAM_URL = "http://172.20.10.3:81/stream";
+    private static final String STREAM_URL = "http://172.20.10.2:81/stream";
     private static final String WS_URL = "ws://helmi.asia/ws/detection";
 
     private WebView webView;
-    private RecyclerView recyclerView;
-    private DetectionAdapter detectionAdapter;
     private WebSocketClient webSocketClient;
-    private List<String> detectedItems = new ArrayList<>();
 
     @Nullable
     @Override
@@ -40,10 +33,7 @@ public class IdentificationFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         webView = view.findViewById(R.id.webView);
-        recyclerView = view.findViewById(R.id.recyclerView);
-
         setupWebView();
-        setupRecyclerView();
         setupWebSocket();
     }
 
@@ -52,12 +42,6 @@ public class IdentificationFragment extends Fragment {
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
         webView.loadUrl(STREAM_URL);
-    }
-
-    private void setupRecyclerView() {
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        detectionAdapter = new DetectionAdapter(detectedItems);
-        recyclerView.setAdapter(detectionAdapter);
     }
 
     private void setupWebSocket() {
@@ -72,11 +56,9 @@ public class IdentificationFragment extends Fragment {
 
                 @Override
                 public void onMessage(String message) {
-                    getActivity().runOnUiThread(() -> {
-                        detectedItems.clear();
-                        detectedItems.add(message);
-                        detectionAdapter.notifyDataSetChanged();
-                    });
+                    getActivity().runOnUiThread(() ->
+                            Toast.makeText(getContext(), "WebSocket 收到消息: " + message, Toast.LENGTH_SHORT).show()
+                    );
                 }
 
                 @Override

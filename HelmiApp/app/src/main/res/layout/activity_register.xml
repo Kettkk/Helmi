@@ -5,31 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
-        android:layout_marginBottom="70dp"
+        android:layout_marginBottom="80dp"
         android:layout_gravity="center_horizontal"
         android:orientation="horizontal">
 
-
         <ImageView
-            android:id="@+id/imageView18"
+            android:id="@+id/imageView13"
             android:layout_width="wrap_content"
-            android:layout_height="60dp"
-            android:layout_marginRight="20dp"
-            app:srcCompat="@drawable/icon_helmet" />
-
-        <TextView
-            android:id="@+id/txt_register_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="智安行"
-            android:textAlignment="center"
-            android:textColor="#409EFF"
-            android:textSize="40sp" />
+            android:layout_height="120dp"
+            app:srcCompat="@drawable/icon_helmi_removebg" />
     </LinearLayout>
 
     <EditText
@@ -70,8 +58,62 @@
         android:onClick="register"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="50dp"
-        android:background="#409EFF"
+        android:background="@drawable/login_rounded_button"
         android:textColor="@color/white"
         android:text="注册" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:text="返回登录" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:text="忘记密码" />
+    </LinearLayout>
+
+    <!-- 添加“用其他方式注册”的提示文本 -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="------------------  用其他方式注册  ------------------"
+        android:textAlignment="center"
+        android:textColor="#666666"
+        android:textSize="14sp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"/>
+
+    <!-- 添加 QQ 和微信图标（假设用于其他方式注册） -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal">
+
+        <ImageView
+            android:id="@+id/icon_qq"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="20dp"
+            app:srcCompat="@drawable/icon_qq" />
+
+        <ImageView
+            android:id="@+id/icon_wechat"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:srcCompat="@drawable/icon_wechat" />
+    </LinearLayout>
 
 </LinearLayout>
