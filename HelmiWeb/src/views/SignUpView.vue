@@ -7,9 +7,6 @@ import SignUpComponent from "@/components/SignUpComponent.vue";
   <div id="viewContainer">
     <el-container>
       <el-aside width="900px">
-        <div>
-          <img src="/Users/fantant/Documents/DevFile/Project/dotNetProject/dotnetEXAM/src/assets/nameTitle.png" style="width: 500px; height: auto;margin-top: 40px;margin-left: 30px">
-        </div>
 
         <div id="mainTitleContainer" style="margin-left: 220px">
           Title
