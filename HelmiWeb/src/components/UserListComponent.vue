@@ -57,7 +57,7 @@ let intervalId = null; // 存储定时器 ID
 
 const fetchData = async () => {
   try {
-    const response = await axios.get('http://localhost:8000/statu/getAllStatu');
+    const response = await axios.get('http://124.71.159.132:8000/statu/getAllStatu');
     console.log(response.data)
     tableData.value = response.data;
   } catch (error) {
