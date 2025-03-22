@@ -79,7 +79,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="----------------------------------  用其他方式打开  ----------------------------------"
+        android:text="------------------  用其他方式打开  ------------------"
         android:textAlignment="center"
         android:textColor="#666666"
         android:textSize="14sp"
