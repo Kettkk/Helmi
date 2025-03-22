@@ -26,7 +26,7 @@ const formRules = reactive({
 const formRef = ref<FormInstance>();
 
 const handleLogin = async () => {
-  const res = await axios.post('http://localhost:8000/admin/login', {
+  const res = await axios.post('http://124.71.159.132:8000/admin/login', {
     username: formLabelAlign.username,
     password: formLabelAlign.password
   });
