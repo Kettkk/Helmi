@@ -55,6 +55,7 @@ const go2AdminView = () => {
 
 <template>
   <div id="formContainer">
+
     <div id="loginTitle">欢迎登录</div>
 
     <el-form
@@ -84,10 +85,10 @@ const go2AdminView = () => {
 #formContainer {
   height: 400px;
   width: 450px;
-  background-color: white;
+  background-color: whitesmoke;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  opacity: 0.9;
+  opacity: 0.95;
   padding-top: 110px;
   padding-left: 40px;
 }
@@ -130,4 +131,5 @@ const go2AdminView = () => {
 #txtBtn:active {
   color: #66b1ff;
 }
+
 </style>

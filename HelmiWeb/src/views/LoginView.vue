@@ -6,17 +6,7 @@ import LoginFormComponent from "@/components/LoginFormComponent.vue";
   <div id="viewContainer">
     <el-container>
       <el-aside width="900px">
-        <div id="mainTitleContainer">
-          智安行
-        </div>
-        <div id="twoTitle">
-          户外智能头盔
-        </div>
 
-        <div id="bottomTitle">
-          帮助中心 | 2024 ©TZC | 京ICP备2024000001号
-        </div>
-      
       </el-aside>
 
       <el-main id="mainContainer">
@@ -31,7 +21,7 @@ import LoginFormComponent from "@/components/LoginFormComponent.vue";
 #viewContainer {
   height: 100vh; /* 使用视口高度 */
   width: 100vw; /* 使用视口宽度 */
-  background-image: url(/src/assets/wallPaper.png);
+  background-image: url(/src/assets/wallPaper1.png);
   background-size: cover; /* 背景图片覆盖整个容器 */
   background-repeat: no-repeat;
   background-position: center;
@@ -44,23 +34,23 @@ import LoginFormComponent from "@/components/LoginFormComponent.vue";
 #mainTitleContainer {
   font-size: 70px;
   font-weight: bold;
-  color: white;
+  color: black;
   margin-top: 220px;
-  margin-left: 220px;
+  margin-left: 550px;
 }
 
 #twoTitle {
   font-size: 50px;
   font-family: "Microsoft YaHei";
-  color: white;
+  color: black;
   margin-top: 20px;
-  margin-left: 220px;
+  margin-left: 550px;
 }
 
 #bottomTitle {
   font-size: 15px;
   font-family: "Microsoft YaHei";
-  color: white;
+  color: whitesmoke;
   margin-top: 360px;
   margin-left: 90px;
 }
